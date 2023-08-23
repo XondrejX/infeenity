@@ -26,6 +26,7 @@ import AppWidgetSummary from '../app-widget-summary';
 import AppCurrentDownload from '../app-current-download';
 import AppTopInstalledCountries from '../app-top-installed-countries';
 
+
 // Mock Messages
 const mockMessages = [
 "Keď ide o financie, buď vždy o krok vpred.",
@@ -82,12 +83,12 @@ export default function OverviewAppView() {
       <Grid container spacing={3}>
         <Grid xs={12} md={8}>
           <AppWelcome
-            title={`Vítaj 👋 \n ${user?.displayName}`}
+            title={`Vítaj späť  👋 \n ${user?.displayName}`}
             description={randomMessage}
             img={<SeoIllustration />}
             action={
               <Button variant="contained" color="primary">
-                Prehľad cieľov
+                Zobraziť úlohy
               </Button>
             }
           />
@@ -97,50 +98,13 @@ export default function OverviewAppView() {
           <AppFeatured list={_appFeatured} />
         </Grid>
 
-        <Grid xs={12} md={4}>
-          <AppWidgetSummary
-            title="Celkový počet bodov"
-            percent={2.6}
-            total={18765}
-            chart={{
-              series: [5, 18, 12, 51, 68, 11, 39, 37, 27, 20],
-            }}
-          />
-        </Grid>
-
-        <Grid xs={12} md={4}>
-          <AppWidgetSummary
-            title="Celkový kvartálny ciel"
-            percent={0.2}
-            total={4876}
-            chart={{
-              colors: [theme.palette.info.light, theme.palette.info.main],
-              series: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26],
-            }}
-          />
-        </Grid>
-
-        <Grid xs={12} md={4}>
-          <AppWidgetSummary
-            title="Celkový ročný ciel"
-            percent={-0.1}
-            total={678}
-            chart={{
-              colors: [theme.palette.warning.light, theme.palette.warning.main],
-              series: [8, 9, 31, 8, 16, 37, 8, 33, 46, 31],
-            }}
-          />
-        </Grid>
 
         <Grid xs={12} md={6} lg={4}>
           <AppCurrentDownload
-            title="Moje portfólio aktivných produktov"
+            title="Tvoj cieľ"
             chart={{
               series: [
-                { label: 'Ostatné', value: 12244 },
-                { label: 'PZP', value: 53345 },
-                { label: 'Investície', value: 44313 },
-                { label: 'Hypotéky', value: 78343 },
+                { label: '1. stretnutie', value: 12244 },
               ],
             }}
           />
@@ -148,7 +112,7 @@ export default function OverviewAppView() {
 
         <Grid xs={12} md={6} lg={8}>
           <AppAreaInstalled
-            subheader="o (+43%) viac než minulý rok"
+            subheader="Ročné výnosy"
             chart={{
               categories: [
                 'Január',
@@ -196,6 +160,21 @@ export default function OverviewAppView() {
           />
         </Grid>
 
+
+        <Grid xs={12} lg={8}>
+          <AppNewInvoice
+            title="Tvoj asistent Cheety"
+            tableData={_appInvoices}
+            tableLabels={[
+              { id: 'id', label: 'Invoice ID' },
+              { id: 'category', label: 'Category' },
+              { id: 'price', label: 'Price' },
+              { id: 'status', label: 'Status' },
+              { id: '' },
+            ]}
+          />
+        </Grid>
+
         <Grid xs={12} lg={8}>
           <AppNewInvoice
             title="Najnovšie zmluvy"
@@ -210,6 +189,11 @@ export default function OverviewAppView() {
           />
         </Grid>
 
+
+        <Grid xs={12} md={6} lg={4}>
+          <AppTopAuthors title="Top klienti" list={_appAuthors} />
+        </Grid>
+
         <Grid xs={12} md={6} lg={4}>
           <AppTopRelated title="Top akcie" list={_appRelated} />
         </Grid>
@@ -218,9 +202,7 @@ export default function OverviewAppView() {
           <AppTopInstalledCountries title="Top indexy" list={_appInstalled} />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
-          <AppTopAuthors title="Top makléri" list={_appAuthors} />
-        </Grid>
+
 
         <Grid xs={12} md={6} lg={4}>
           <Stack spacing={3}>

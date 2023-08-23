@@ -33,18 +33,18 @@ import NotificationItem from './notification-item';
 const TABS = [
   {
     value: 'all',
-    label: 'All',
-    count: 22,
+    label: 'Všetky',
+    count: 0,
   },
   {
     value: 'unread',
-    label: 'Unread',
-    count: 12,
+    label: 'Neprečítané',
+    count: 0,
   },
   {
     value: 'archived',
-    label: 'Archived',
-    count: 10,
+    label: 'Archív',
+    count: 0,
   },
 ];
 
@@ -77,7 +77,7 @@ export default function NotificationsPopover() {
   const renderHead = (
     <Stack direction="row" alignItems="center" sx={{ py: 2, pl: 2.5, pr: 1, minHeight: 68 }}>
       <Typography variant="h6" sx={{ flexGrow: 1 }}>
-        Notifications
+        Upozornenia
       </Typography>
 
       {!!totalUnRead && (

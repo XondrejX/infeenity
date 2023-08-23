@@ -63,21 +63,21 @@ export function useNavData() {
             icon: ICONS.dashboard,
           },
           {
-            title: t('Ideálny finančný poriadok'),
+            title: t('Infeenity game'),
             path: paths.dashboard.general.banking,
             icon: ICONS.banking,
           },
           {
-            title: t('InFEEnity cesta'),
+            title: t('Infeenity way'),
             path: paths.dashboard.tour.root,
             icon: ICONS.tour,
             children: [
               { title: t('Prehľad'), path: paths.dashboard.tour.demo.details },
-              { title: t('Kariéra'), path: paths.dashboard.tour.demo.edit },
+              { title: t('Benefity'), path: paths.dashboard.tour.demo.edit },
               { title: t('Prihláška'), path: paths.dashboard.tour.new },
             ],
           },          {
-            title: t('Klienti'),
+            title: t('Moji klienti'),
             path: paths.dashboard.job.root,
             icon: ICONS.job,
             children: [
@@ -87,25 +87,15 @@ export function useNavData() {
               { title: t('Uzatvorené'), path: paths.dashboard.job.demo.edit },
             ],
           },
-          {
-            title: t('Novinky'),
-            path: paths.dashboard.post.root,
-            icon: ICONS.blog,
-          },
-                    {
-            title: t('Štatistiky'),
-            path: paths.dashboard.general.analytics,
-            icon: ICONS.analytics,
-          },
-                    {
+                              {
             title: t('Kalendár'),
             path: paths.dashboard.calendar,
             icon: ICONS.calendar,
           },
           {
-            title: t('Benefity'),
-            path: paths.dashboard.general.booking,
-            icon: ICONS.booking,
+            title: t('Galéria'),
+            path: paths.dashboard.post.root,
+            icon: ICONS.blog,
           },
           {
             title: t('Produkty'),
@@ -113,14 +103,19 @@ export function useNavData() {
             icon: ICONS.file,
           },
           {
-            title: t('InfeeChat'),
+            title: t('Cheety'),
             path: paths.dashboard.chat,
             icon: ICONS.chat,
           },
          {
-            title: t('E-mail'),
+            title: t('Mail'),
             path: paths.dashboard.mail,
             icon: ICONS.mail,
+          },
+                    {
+            title: t('Zoznam Benefitov'),
+            path: paths.dashboard.general.booking,
+            icon: ICONS.booking,
           },
         ],
       },
@@ -132,32 +127,28 @@ export function useNavData() {
         items: [
           // USER
           {
-            title: t('Účet'),
+            title: t('Uživateľ'),
             path: paths.dashboard.user.root,
             icon: ICONS.user,
             children: [
-              { title: t('profile'), path: paths.dashboard.user.root },
-              { title: t('cards'), path: paths.dashboard.user.cards },
-              { title: t('list'), path: paths.dashboard.user.list },
-              { title: t('create'), path: paths.dashboard.user.new },
-              { title: t('edit'), path: paths.dashboard.user.demo.edit },
-              { title: t('account'), path: paths.dashboard.user.account },
+              { title: t('Profil'), path: paths.dashboard.user.account },
+              { title: t('Úpravy'), path: paths.dashboard.user.demo.edit },
+
             ],
           },
 
-          // INVOICE
           {
             title: t('Ciele'),
             path: paths.dashboard.invoice.root,
             icon: ICONS.invoice,
             children: [
-              { title: t('list'), path: paths.dashboard.invoice.root },
+              { title: t('Prehľad'), path: paths.dashboard.invoice.root },
               {
-                title: t('details'),
+                title: t('Mesačné'),
                 path: paths.dashboard.invoice.demo.details,
               },
-              { title: t('create'), path: paths.dashboard.invoice.new },
-              { title: t('edit'), path: paths.dashboard.invoice.demo.edit },
+              { title: t('Ročné'), path: paths.dashboard.invoice.new },
+              { title: t('Úpravy'), path: paths.dashboard.invoice.demo.edit },
             ],
           },
           {

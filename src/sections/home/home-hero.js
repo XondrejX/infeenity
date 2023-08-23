@@ -279,8 +279,7 @@ export default function HomeHero() {
 
         <Stack spacing={2} direction="row" justifyContent="center">
           {['figma', 'js', 'ts', 'nextjs', 'vite'].map((platform) => (
-            <m.div key={platform} variants={varFade().in}>
-            </m.div>
+            <m.div key={platform} variants={varFade().in} />
           ))}
         </Stack>
       </Stack>

@@ -1,7 +1,8 @@
-'use client';
 
-import { createContext, useState, useEffect } from 'react';
-import { auth } from '../../firebaseConfig';  // Adjust the path if needed
+
+import React, { createContext, useState, useEffect, useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { auth } from './firebaseConfig';  // Adjust the path if needed
 
 export const AuthContext = createContext();
 
@@ -13,9 +14,15 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();  // This ensures we unsubscribe from the listener when the component is unmounted
   }, []);
 
+  const value = useMemo(() => ({ currentUser }), [currentUser]);
+
   return (
-    <AuthContext.Provider value={{ currentUser }}>
+    <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
   );
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired
 };
